@@ -1,8 +1,162 @@
-#d1 ul {
-  background-color: red;
+body {
+  margin: 0;
 }
-#d1 ul li {
-  background-color: blue;
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  margin: 0;
+  color: #124557;
+}
+body h1 {
+  font-size: 48px;
+}
+body h2 {
+  font-size: 41px;
+}
+body h3 {
+  font-size: 35px;
+}
+body h4 {
+  font-size: 28px;
+}
+body h5 {
+  font-size: 25px;
+}
+body h6 {
+  font-size: 22px;
+}
+body .pageContainer {
+  position: relative;
+}
+body .pageContainer .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+body .pageContainer .container {
+  max-width: 1170px;
+  padding-right: 45px;
+  padding-left: 45px;
+  margin-right: auto;
+  margin-left: auto;
+}
+body .pageContainer .row {
+  display: flex;
+}
+body .pageContainer .col {
+  flex: 1 1 50%;
+}
+body .pageContainer .generalContent {
+  background-color: white;
+  color: #124557;
+  padding: 25px;
+}
+body .pageContainer .hero {
+  background-image: url("./images/auto-accident-background-image.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding: 50px 0;
+}
+body .pageContainer .hero:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(84, 84, 84, 0.7);
+  z-index: -1;
+}
+body .pageContainer .hero .heading {
+  color: #ffffff;
+  font-size: 35px;
+}
+body .pageContainer .hero .subheading {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: normal;
+}
+body .pageContainer .hero .formContainer {
+  background-color: #124557;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  padding: 25px;
+}
+body .pageContainer .hero .formContainer .question {
+  margin: 15px 0;
+  display: inline-block;
+  width: 100%;
+}
+body .pageContainer .hero .formContainer .question:first-child {
+  margin-top: 0;
+}
+body .pageContainer .hero .formContainer .question h6 {
+  color: #ffffff;
+}
+body .pageContainer .hero .formContainer .question .answers {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice {
+  text-align: center;
+  width: 48%;
+  height: 40px;
+  position: relative;
+  display: block;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice label, body .pageContainer .hero .formContainer .question .answers .answerChoice input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio] {
+  opacity: 0;
+  z-index: 100;
+  margin: 0;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice input:hover {
+  cursor: pointer;
+}
+body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio]:checked + label {
+  background-color: yellow;
+}
+body .pageContainer .hero .formContainer .contactInfo {
+  margin: 15px 0;
+}
+body .pageContainer .hero .formContainer .contactInfo h6 {
+  color: #ffffff;
+}
+body .pageContainer .hero .formContainer .contactInfo .contactField {
+  margin: 10px 0;
+}
+body .pageContainer .hero .formContainer .contactInfo .contactField label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+body .pageContainer .hero .formContainer .contactInfo .contactField input {
+  width: 100%;
+  height: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
