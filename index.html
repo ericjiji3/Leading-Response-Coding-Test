@@ -6,7 +6,12 @@
     <title>Find an Auto Accident Attorney Now</title>
     <meta name="description" content="Injured in an auto accident? Complete the quote form for your free evaluation!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> 
 </head>
  
 <body>
@@ -22,117 +27,120 @@
             </button>
         </header>
         <section class="hero">
+            <div class="heroHeading">
+                <h1 class="heading">Injured in an Auto Accident?</h1>
+                <h1 class="subheading">Complete the Short Form Below for Your Free Evaluation</h1>
+            </div>
             <div class="row container">
-                <div class="col">
-                    <h1 class="heading">Injured in an Auto Accident?</h1>
-                    <h1 class="subheading">Complete the Short Form Below for Your Free Evaluation</h1>
-                    <section class="generalContent">
-                            <h3>How Much Is My Auto Accident Claim Worth?</h3>
-                            <span>Without a ridiculous amount of detail and a qualified personal injury lawyer licensed to practice in your state, it is difficult to answer this question with any accuracy. However, you can use publicly available data to extrapolate an amount, depending on which claim type you plan to file:</span>
-                            <ul>
-                                <li>According to the Insurance Information Institute, the average bodily injury car insurance claim in 2019 paid $18,417. That's assuming you are not the at-fault driver, have a visible-to-serious injury and settle directly with the car insurance provider.</li>
-                                <li>Hospital bills for whiplash or neck-related pain and injuries from car accidents in 2013 totaled about $53,000-$97,000, on average. This number's nearly a decade old, so expect significantly higher bills for those same injuries treated in hospitals today</li>
-                                <li>Most personal injury settlements for car accident claims in 2015 paid $64,761, according to the Civil Justice Initiative. However, no insurance company would likely offer that amount unless you have a personal injury attorney representing your claim.</li>
-                                <li>National Highway Traffic Safety Administration (NHTSA) data shows insurance companies typically only cover 54% of injury accident costs.</li>
-                            </ul>
-                            <span>Let's look at that first number from 2019, which is $18,417. According to NHTSA data, your actual costs from an auto accident injury are closer to double that amount. However, that's only if you don't need to go to the hospital, based on our second point above. Looking at the third number is probably closer to what you might expect filing an auto accident claim through a qualified attorney. However, that $18,417 is just 28.5% of the typical auto accident claim payout in 2015. You can likely expect up to 3.5x more money for your auto accident claim if you have an attorney vs. settling with insurance directly.</span>
-                    </section>
+                <div class="col generalContent">
+                    
+                    <div class="contentContainer">
+                        <h3>How Much Is My Auto Accident Claim Worth?</h3>
+                        <span>Without a ridiculous amount of detail and a qualified personal injury lawyer licensed to practice in your state, it is difficult to answer this question with any accuracy. However, you can use publicly available data to extrapolate an amount, depending on which claim type you plan to file:</span>
+                        <ul>
+                            <li>According to the Insurance Information Institute, <b>the average bodily injury car insurance claim in 2019 paid $18,417</b>. That's assuming you are not the at-fault driver, have a visible-to-serious injury and settle directly with the car insurance provider.</li>
+                            <li><b>Hospital bills for whiplash or neck-related pain and injuries from car accidents in 2013 totaled about $53,000-$97,000, on average</b>. This number's nearly a decade old, so expect significantly higher bills for those same injuries treated in hospitals today</li>
+                            <li><b>Most personal injury settlements for car accident claims in 2015 paid $64,761</b>, according to the Civil Justice Initiative. However, no insurance company would likely offer that amount unless you have a personal injury attorney representing your claim.</li>
+                            <li>National Highway Traffic Safety Administration (NHTSA) data shows <b>insurance companies typically only cover 54% of injury accident costs</b>.</li>
+                        </ul>
+                        <span>Let's look at that first number from 2019, which is $18,417. According to NHTSA data, your actual costs from an auto accident injury are closer to double that amount. However, that's only if you don't need to go to the hospital, based on our second point above. Looking at the third number is probably closer to what you might expect filing an auto accident claim through a qualified attorney. However, that $18,417 is just 28.5% of the typical auto accident claim payout in 2015. <b>You can likely expect up to 3.5x more money for your auto accident claim if you have an attorney vs. settling with insurance directly</b>.</span>
+                        <a href="#form" class="formLink">Get Free Quotes Now!</a>
+                    </div>
                 </div>
                 <div class="col">
-                    <form class="formContainer">
+                    <form class="formContainer" id="form">
                         <div class="question">
-                            <h6>What was the approximate date of the accident? (Your best guess is fine.)</h6>
+                            <h5>What was the approximate date of the accident? (Your best guess is fine.)</h5>
                             <div class="answerChoice">
-                                <label for="start">Date of accident:</label>
-                                <input type="date" id="accident-date" name="accident-date" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+                                <input class="accidentDateInput" type="date" id="accidentDate" name="accidentDate"/>
+                                <label class="accidentDateLabel" for="accidentDate">Date of accident:</label>
+                                
                             </div>
+                            <span class="reqText quest1">*Required Field</span>
                         </div>
                         <div class="question">
-                            <h6>Did you sustain injuries that required medical treatment or hospitalization?</h6>
+                            <h5>Did you sustain injuries that required medical treatment or hospitalization?</h5>
                             <div class="answers">
                                 <div class="answerChoice">
                                     
-                                    <input type="radio" id="injuries1" name="injuries" value="yes">
+                                    <input type="radio" class="radioSet1" id="injuries1" name="injuries" value="yes">
                                     <label for="injuries1">Yes</label>
                                 </div>
                                 <div class="answerChoice">
                                     
-                                    <input type="radio" id="injuries2" name="injuries" value="no">
+                                    <input type="radio" class="radioSet1" id="injuries2" name="injuries" value="no">
                                     <label for="injuries2">No</label>
                                 </div>
+                                
                             </div>
-                            
+                            <span class="reqText quest2">*Required Field</span>
                         </div>
                         <div class="question">
-                            <h6>Was the accident your fault?</h6>
+                            <h5>Was the accident your fault?</h5>
                             <div class="answers">
                                 <div class="answerChoice">
-                                    
-                                    <input type="radio" id="fault1" name="fault" value="yes">
+                                    <input type="radio" class="radioSet2" id="fault1" name="fault" value="yes">
                                     <label for="fault1">Yes</label>
                                 </div>
                                 <div class="answerChoice">
-                                    
-                                    <input type="radio" id="fault2" name="fault" value="no">
+                                    <input type="radio" class="radioSet2" id="fault2" name="fault" value="no">
                                     <label for="fault2">No</label>
                                 </div>
+                                
                             </div>
+                            <span class="reqText quest3">*Required Field</span>
                         </div>
                         <div class="question">
-                            <h6>Do you already have an attorney representing your claim?</h6>
+                            <h5>Do you already have an attorney representing your claim?</h5>
                             <div class="answers">
                                 <div class="answerChoice">
                                     
-                                    <input type="radio" id="attorney1" name="attorney" value="yes">
+                                    <input type="radio" class="radioSet3" id="attorney1" name="attorney" value="yes">
                                     <label for="attorney1">Yes</label>
                                 </div>
                                 <div class="answerChoice">
                                     
-                                    <input type="radio" id="attorney2" name="attorney" value="no">
+                                    <input type="radio" class="radioSet3" id="attorney2" name="attorney" value="no">
                                     <label for="attorney2">No</label>
                                 </div>
+                                
                             </div>
-                            
+                            <span class="reqText quest4">*Required Field</span>
                         </div>
                         <div class="contactInfo">
-                                <h6>Contact Information</h6>
-                                <div class="contactField">
-                                    <label for="fName">First Name:</label>
-                                    <input type="text" id="fName" name="fName" placeholder="First Name"/>
-                                </div>
-                                <div class="contactField">
-                                    <label for="lName">Last Name:</label>
-                                    <input type="text" id="lName" name="lName" placeholder="Last Name"/>
-                                </div>
+                                <!-- <h5>Contact Information</h5> -->
+                                    <div class="contactField">
+                                        <!-- If you hope to get Latin- or ASCII-only, you need to tell the user. -->
+                                        <label for="fName">First Name:</label>
+                                        <input type="text" id="fName" name="fName" placeholder="First Name"/>
+                                        <span class="reqText questFName">*Required Field</span>
+                                    </div>
+                                    <div class="contactField">
+                                        <label for="lName">Last Name:</label>
+                                        <input type="text" id="lName" name="lName" placeholder="Last Name"/>
+                                        <span class="reqText questLName">*Required Field</span>
+                                    </div>
+
+                                
                                 <div class="contactField">
                                     <label for="phone">Phone:</label>
-                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone"/>
+                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone (123-456-7890)"/>
+                                    <span class="reqText questPhone">*Required Field</span>
                                 </div>
                                 <div class="contactField">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" pattern=".+@globex\.com" placeholder="Email"/>
+                                    <input type="email" id="email" name="email" pattern=".+@globex\.com" placeholder="Email (email@website.com)"/>
+                                    <span class="reqText questEmail">*Required Field</span>
                                 </div>
                                 <div class="contactField">
                                     <label for="zip">Zip Code:</label>
                                     <input type="text" id="zip" name="zip" pattern="[0-9]{5}" placeholder="Zip Code"/>
+                                    <span class="reqText questZip">*Required Field</span>
                                 </div>
                         </div>
-                        <button>Submit</button>
+                        <button class="submit" type="button" onclick="validateForm()"><span class="submitText">Submit</span></button>
                     </form>
                 </div>
-            </div>
-        </section>
-        <section class="generalContent">
-            <div class="container">
-                <h3>How Much Is My Auto Accident Claim Worth?</h3>
-                <span>Without a ridiculous amount of detail and a qualified personal injury lawyer licensed to practice in your state, it is difficult to answer this question with any accuracy. However, you can use publicly available data to extrapolate an amount, depending on which claim type you plan to file:</span>
-                <ul>
-                    <li>According to the Insurance Information Institute, the average bodily injury car insurance claim in 2019 paid $18,417. That's assuming you are not the at-fault driver, have a visible-to-serious injury and settle directly with the car insurance provider.</li>
-                    <li>Hospital bills for whiplash or neck-related pain and injuries from car accidents in 2013 totaled about $53,000-$97,000, on average. This number's nearly a decade old, so expect significantly higher bills for those same injuries treated in hospitals today</li>
-                    <li>Most personal injury settlements for car accident claims in 2015 paid $64,761, according to the Civil Justice Initiative. However, no insurance company would likely offer that amount unless you have a personal injury attorney representing your claim.</li>
-                    <li>National Highway Traffic Safety Administration (NHTSA) data shows insurance companies typically only cover 54% of injury accident costs.</li>
-                </ul>
-                <span>Let's look at that first number from 2019, which is $18,417. According to NHTSA data, your actual costs from an auto accident injury are closer to double that amount. However, that's only if you don't need to go to the hospital, based on our second point above. Looking at the third number is probably closer to what you might expect filing an auto accident claim through a qualified attorney. However, that $18,417 is just 28.5% of the typical auto accident claim payout in 2015. You can likely expect up to 3.5x more money for your auto accident claim if you have an attorney vs. settling with insurance directly.</span>
             </div>
         </section>
     </div>

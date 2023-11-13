@@ -1,174 +1,477 @@
+// Set global variables
 $primaryColor: #124557;
 $secondaryColor: #ffffff;
 $accentColor: #ee3b3b;
 $borderRadius: 5px;
-$borderWidth: 1px;
+$borderWidth: 3px;
+$buttonHeight: 40px;
+$primaryButtonHeight: 50px;
+$buttonBorderRadius: 2px;
+$buttonBorderWidth: 2px;
+$primaryButtonColor: $accentColor;
+$primaryButtonBorderColor: $secondaryColor;
+$secondaryButtonColor: $secondaryColor;
+$secondaryButtonBorderColor: $secondaryColor;
+$mediumScreenSize: 1000px;
+$smallScreenSize: 600px;
 
-
-
-body{
-    margin: 0;
-
-    h1, h2, h3, h4, h5, h6 {
+html{
+    scroll-behavior: smooth;
+    body{
+        // Mostly setting font sizes for text
         margin: 0;
-        color: $primaryColor;
-
-    }
-    h1{
-        font-size: 48px;
-    }
-    h2{
-        font-size: 41px;
-    }
-    h3{
-        font-size: 35px;
-    }
-    h4{
-        font-size: 28px;
-    }
-    h5{
-        font-size: 25px;
-    }
-    h6{
-        font-size: 22px;
-    }
-    .pageContainer{
-        position: relative;
-        .header{
-            display: flex;
-            justify-content: space-between;
-            padding: 25px 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        overflow-x: hidden;
+        button, input, label{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 15px;
         }
-        .container{
-            max-width: 1170px;
-            padding-right: 45px;
-            padding-left: 45px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        .row{
-            display: flex;
-        }
-        .col{
-            flex: 1 1 50%;
-        }
-        .generalContent{
-            background-color: white;
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
             color: $primaryColor;
-            padding: 25px;
+            font-family: 'Open Sans', sans-serif;
         }
-        .hero{
-            background-image: url('./images/auto-accident-background-image.jpg');
-            background-size: cover;
-            position: relative;
-            z-index: 1;
-            padding: 50px 0;
-            &:before{
-                content: '';
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgb(84 84 84 / 70%);
-                z-index: -1;
+        h1{
+            font-size: 35px;
+        }
+        h2{
+            font-size: 30px;
+        }
+        h3{
+            font-size: 24px;
+        }
+        h4{
+            font-size: 21px;
+        }
+        h5{
+            font-size: 18px;
+        }
+        h6{
+            font-size: 15px;
+        }
+        @media(max-width: $smallScreenSize){
+            font-size: 13px;
+            button, input, label{
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                font-size: 13px;
             }
-            .heading{
-                color: $secondaryColor;
-                font-size: 35px;
+            h1, h2, h3, h4, h5, h6 {
+                margin: 0;
+                color: $primaryColor;
+                font-family: 'Open Sans', sans-serif;
             }
-            .subheading{
-                color: $secondaryColor;
+            h1{
+                font-size: 32px;
+            }
+            h2{
                 font-size: 28px;
-                font-weight: normal;
             }
-            .formContainer{
-                background-color: $primaryColor;
-                border-radius: $borderRadius;
-                border: $borderWidth solid $secondaryColor;
-                padding: 25px;
-                .question{
-                    margin: 15px 0;
-                    display: inline-block;
-                    width: 100%;
-                    &:first-child{
-                        margin-top: 0;
+            h3{
+                font-size: 22px;
+            }
+            h4{
+                font-size: 19px;
+            }
+            h5{
+                font-size: 16px;
+            }
+            h6{
+                font-size: 13px;
+            }
+        }
+        .pageContainer{
+            position: relative;
+            .header{
+                display: flex;
+                justify-content: space-between;
+                padding: 25px 0;
+                @media(max-width: $smallScreenSize) {
+                    flex-direction: column;
+                    justify-content: center;
+                    .logoContainer{
+                        text-align: center;
+                        margin-bottom: 10px;
                     }
-                    h6{
-                        color: $secondaryColor;
-                    }
-                    .answers{
-                        display: flex;
-                        justify-content: space-between;
-                        margin: 10px 0;
-                        .answerChoice{
-                            text-align: center;
-                            width:48%;
-                            height:40px;
-                            position:relative;
-                            display: block;
-                            label, input{
-                                display:block;
-                                position:absolute;
-                                top:0;
-                                left:0;
-                                right:0;
-                                bottom:0;
-                            }
-                            label{
-                                padding:5px;
-                                border:1px solid #CCC; 
-                                z-index:90;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                // button styling
-                                background-color: #ffffff;
-                                border-radius: 2px;
-                            }
-                            input[type="radio"]{
-                                opacity:0;
-                                z-index:100;
-                                margin: 0;
-                                
-                            }
-                            input:hover{
-                                cursor: pointer;
-                            }
-                            input[type="radio"]:checked + label {
-                                background-color:yellow;
-                            }
+                    .callCtaContainer{
+                        .callCtaLink{
+                            justify-content: center;
                         }
                     }
-                    
                 }
-                .contactInfo{
-                    margin: 15px 0;
-                    h6{
-                        color: $secondaryColor;
+                .callCtaContainer{
+                    background-color: $primaryColor;
+                    border-radius: $buttonBorderRadius;
+                    transition: 0.15s all ease-in;
+                    border: none;
+                    &:hover{
+                        background-color: #6aa2b9;
+                        transition: 0.15s all ease-in;
                     }
-                    .contactField{
-                        margin: 10px 0;
-                        label{
+                    .callCtaLink{
+                        color: $secondaryColor;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 5px;
+                        height: $buttonHeight;
+                        font-weight: bold;
+                        &::before{
+                            background-image: url('./images/phone-icon.png');
+                            display: inline-block;
+                            width: 20px; 
+                            height: 20px;
+                            margin-right: 5px;
+                            background-size: contain;
+                            content:"";
+                        }
+                        
+                    }
+                }
+            }
+            .container{
+                max-width: 1170px;
+                padding-right: 45px;
+                padding-left: 45px;
+                margin-right: auto;
+                margin-left: auto;
+                @media(max-width: $smallScreenSize){
+                    padding-right: 20px;
+                    padding-left: 20px;
+                }
+            }
+            .row{
+                display: flex;
+                @media(max-width: $mediumScreenSize){
+                    flex-direction: column-reverse;
+                }
+            }
+            .col{
+                flex: 1 1 50%;
+                &.generalContent{
+                    background-color: white;
+                    color: $primaryColor;
+                    margin-top: 50px;
+                    height: fit-content;
+                    border-top-left-radius: $borderRadius;
+                    border-bottom-left-radius: $borderRadius;
+                    .contentContainer{
+                        padding: 25px;
+                        h3{
+                            margin-bottom: 15px;
+                        }
+                        li{
+                            margin: 5px 0;
+                        }
+                        .formLink{
+                            display: none;
+                            @media(max-width: $mediumScreenSize){
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                height: $buttonHeight;
+                                background-color: $primaryColor;
+                                border-radius: $buttonBorderRadius;
+                                color: $secondaryColor;
+                                text-decoration: none;
+                                font-weight: bold;
+                                margin-top: 15px;
+                                transition: 0.15s all ease-in;
+                                &:hover{
+                                    background-color: #6aa2b9;
+                                    transition: 0.15s all ease-in;
+                                }
+                            }
+                        }
+                        @media(max-width: $mediumScreenSize){
+                            padding: 50px 45px;
+                        }
+                        @media(max-width: $smallScreenSize){
+                            padding: 50px 20px;
+                        }
+                    }
+                    @media(max-width: $mediumScreenSize){
+                        // A little bit of CSS magic to make it appear as if the general content is its own section
+                        position: relative;
+                        width: 100vw;
+                        left: calc(-50vw + 50%);
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+            }
+            
+            .hero{
+                background-image: url('./images/auto-accident-background-image.jpg');
+                background-size: cover;
+                position: relative;
+                z-index: 1;
+                padding: 50px 0;
+                @media(max-width: $mediumScreenSize){
+                    padding: 50px 0 0;
+                }
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(84 84 84 / 70%);
+                    z-index: -1;
+                }
+                .heroHeading{
+                    text-align: center;
+                    margin-bottom: 50px;
+                    @media(max-width: $mediumScreenSize){
+                        padding: 0 45px;
+                        margin-bottom: 30px;
+                    }
+                    @media(max-width: $smallScreenSize){
+                        padding: 0 20px;
+                    }
+                    .heading{
+                        color: $secondaryColor;
+                        margin-bottom: 10px;
+                        @media(max-width: $mediumScreenSize){
+                            font-size: 25px;
+                        }
+                    }
+                    .subheading{
+                        color: $secondaryColor;
+                        font-size: 25px;
+                        font-weight: normal;
+                        font-style: italic;
+                        @media(max-width: $mediumScreenSize){
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .formContainer{
+                    background-color: $primaryColor;
+                    border-radius: $borderRadius;
+                    border: $borderWidth solid $secondaryColor;
+                    padding: 25px;
+                    .question{
+                        margin: 2.5px 0;
+                        display: inline-block;
+                        width: 100%;
+                        &:first-child{
+                            margin-top: 0;
+                        }
+                        h5{
+                            color: $secondaryColor;
+                        }
+                        .accidentDateLabel{
+                            //CSS to hide the label but still accessible for screen readers
                             position: absolute;
                             width: 1px;
                             height: 1px;
                             padding: 0;
                             margin: -1px;
                             overflow: hidden;
-                            clip: rect(0,0,0,0);
+                            clip: rect(0, 0, 0, 0);
                             white-space: nowrap;
                             border: 0;
                         }
-                        input{
-                            width: 100%;
-                            height: 40px;
+                        .accidentDateInput{
+                            width: calc(100% - 10px);
+                            height: $buttonHeight;
+                            padding-left: 10px;
+                            margin: 7.5px 0 2.5px;
+                        }
+                        .answers{
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 7.5px 0 2.5px;
+                            .answerChoice{
+                                text-align: center;
+                                width:48%;
+                                height: $buttonHeight;
+                                position:relative;
+                                display: block;
+                                &:focus-visible{
+                                    // CSS to highlight radio buttons for keyboard users
+                                    label{
+                                        border-color: $accentColor;
+                                        transition: 0.2s all ease-in;
+                                        cursor: pointer;
+                                    }
+                                }
+                                label, input{
+                                    display:block;
+                                    position:absolute;
+                                    top:0;
+                                    left:0;
+                                    right:0;
+                                    bottom:0;
+                                }
+                                label{
+                                    padding:5px;
+                                    border:$buttonBorderWidth solid $secondaryButtonBorderColor; 
+                                    z-index:1;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    color: $primaryColor;
+                                    background-color: $secondaryButtonColor;
+                                    border-radius: $buttonBorderRadius;
+                                    transition: 0.2s all ease-in;
+                                    &:hover{
+                                        border-color: $accentColor;
+                                        transition: 0.2s all ease-in;
+                                        cursor: pointer;
+                                    }   
+                                }
+                                // CSS to hide the radio button but still able to be selected
+                                input[type="radio"]{
+                                    opacity:0;
+                                    z-index:1;
+                                    margin: 0;
+                                    transition: 0.2s all ease-in;
+                                }
+                                input:hover{
+                                    cursor: pointer;
+                                }
+                                input[type="radio"]:checked + label {
+                                    background-color: $accentColor;
+                                    border-color: $secondaryColor;
+                                    transition: 0.2s all ease-in;
+                                    color: $secondaryColor;
+                                }
+                            }
                         }
                     }
+                    .contactInfo{
+                        margin: 2.5px 0;
+                        .contactField{
+                            margin: 10px 0;
+                            label{
+                                //Hiding label but still accessible by screen readers
+                                position: absolute;
+                                width: 1px;
+                                height: 1px;
+                                padding: 0;
+                                margin: -1px;
+                                overflow: hidden;
+                                clip: rect(0,0,0,0);
+                                white-space: nowrap;
+                                border: 0;
+                            }
+                            input{
+                                //width is a calculated value to account for padding
+                                width: calc(100% - 10px);
+                                padding-left: 10px;
+                                height: $buttonHeight;
+                                border-radius: $buttonBorderRadius;
+                                border: none;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                    .reqText{
+                        opacity: 0;
+                        color: $accentColor;
+                        transition: 0.15s all ease-in;
+                        font-size: 10px;
+                        font-weight: bold;
+                        &.active{
+                            opacity: 1;
+                            transition: 0.15s all ease-in;
+                        }
+                    }
+                    .submit{
+                        width: 100%;
+                        position: relative;
+                        height: $primaryButtonHeight;
+                        border: $buttonBorderWidth solid $primaryButtonBorderColor; 
+                        background-color: $primaryButtonColor;
+                        border-radius: $buttonBorderRadius;
+                        color: $secondaryColor;
+                        transition: 0.2s all ease-in;
+                        font-size: 18px;
+                        @media(max-width: $smallScreenSize){
+                            font-size: 16px;
+                        }
+                        &:hover{
+                            cursor: pointer;
+                            background-color: $secondaryColor;
+                            border-color: $accentColor;
+                            transition: 0.2s all ease-in;
+                            span{
+                                color: $accentColor;
+                                transition: 0.2s all ease-in;
+                            }
+                        }
+                        &.loading{
+                            background-color: $secondaryColor;
+                            border-color: $accentColor;
+                            &:hover{
+                                cursor: unset;
+                            }
+                            .submitText{
+                                visibility: hidden;
+                                opacity: 0;
+                            }
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 16px;
+                                height: 16px;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
+                                border: 4px solid transparent;
+                                border-top-color: $accentColor;
+                                border-radius: 50%;
+                                animation: button-loading-spinner 1s ease infinite;
+                            }
+                        }
+                        &.success{
+                            background-color: $secondaryColor;
+                            border-color: $accentColor;
+                            color: $accentColor;
+                            .submitText{
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                            &:hover{
+                                cursor: unset;
+                            }
+                        }
+                        &.failed{
+                            background-color: $secondaryColor;
+                            border-color: $accentColor;
+                            color: $accentColor;
+                            .submitText{
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                            &:hover{
+                                cursor: unset;
+                            }
+                        }
+                    }
+
                 }
             }
         }
     }
 }
+
+//Keyframe animation for loading animation when submit button hit
+@keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }

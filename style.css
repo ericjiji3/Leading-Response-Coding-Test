@@ -1,62 +1,218 @@
-body {
-  margin: 0;
+html {
+  scroll-behavior: smooth;
 }
-body h1, body h2, body h3, body h4, body h5, body h6 {
+html body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+html body button, html body input, html body label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
   margin: 0;
   color: #124557;
+  font-family: "Open Sans", sans-serif;
 }
-body h1 {
-  font-size: 48px;
-}
-body h2 {
-  font-size: 41px;
-}
-body h3 {
+html body h1 {
   font-size: 35px;
 }
-body h4 {
-  font-size: 28px;
+html body h2 {
+  font-size: 30px;
 }
-body h5 {
-  font-size: 25px;
+html body h3 {
+  font-size: 24px;
 }
-body h6 {
-  font-size: 22px;
+html body h4 {
+  font-size: 21px;
 }
-body .pageContainer {
+html body h5 {
+  font-size: 18px;
+}
+html body h6 {
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  html body {
+    font-size: 13px;
+  }
+  html body button, html body input, html body label {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
+    margin: 0;
+    color: #124557;
+    font-family: "Open Sans", sans-serif;
+  }
+  html body h1 {
+    font-size: 32px;
+  }
+  html body h2 {
+    font-size: 28px;
+  }
+  html body h3 {
+    font-size: 22px;
+  }
+  html body h4 {
+    font-size: 19px;
+  }
+  html body h5 {
+    font-size: 16px;
+  }
+  html body h6 {
+    font-size: 13px;
+  }
+}
+html body .pageContainer {
   position: relative;
 }
-body .pageContainer .header {
+html body .pageContainer .header {
   display: flex;
   justify-content: space-between;
   padding: 25px 0;
 }
-body .pageContainer .container {
+@media (max-width: 600px) {
+  html body .pageContainer .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  html body .pageContainer .header .logoContainer {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  html body .pageContainer .header .callCtaContainer .callCtaLink {
+    justify-content: center;
+  }
+}
+html body .pageContainer .header .callCtaContainer {
+  background-color: #124557;
+  border-radius: 2px;
+  transition: 0.15s all ease-in;
+  border: none;
+}
+html body .pageContainer .header .callCtaContainer:hover {
+  background-color: #6aa2b9;
+  transition: 0.15s all ease-in;
+}
+html body .pageContainer .header .callCtaContainer .callCtaLink {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  height: 40px;
+  font-weight: bold;
+}
+html body .pageContainer .header .callCtaContainer .callCtaLink::before {
+  background-image: url("./images/phone-icon.png");
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-size: contain;
+  content: "";
+}
+html body .pageContainer .container {
   max-width: 1170px;
   padding-right: 45px;
   padding-left: 45px;
   margin-right: auto;
   margin-left: auto;
 }
-body .pageContainer .row {
+@media (max-width: 600px) {
+  html body .pageContainer .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+html body .pageContainer .row {
   display: flex;
 }
-body .pageContainer .col {
+@media (max-width: 1000px) {
+  html body .pageContainer .row {
+    flex-direction: column-reverse;
+  }
+}
+html body .pageContainer .col {
   flex: 1 1 50%;
 }
-body .pageContainer .generalContent {
+html body .pageContainer .col.generalContent {
   background-color: white;
   color: #124557;
+  margin-top: 50px;
+  height: fit-content;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+html body .pageContainer .col.generalContent .contentContainer {
   padding: 25px;
 }
-body .pageContainer .hero {
+html body .pageContainer .col.generalContent .contentContainer h3 {
+  margin-bottom: 15px;
+}
+html body .pageContainer .col.generalContent .contentContainer li {
+  margin: 5px 0;
+}
+html body .pageContainer .col.generalContent .contentContainer .formLink {
+  display: none;
+}
+@media (max-width: 1000px) {
+  html body .pageContainer .col.generalContent .contentContainer .formLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #124557;
+    border-radius: 2px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.15s all ease-in;
+  }
+  html body .pageContainer .col.generalContent .contentContainer .formLink:hover {
+    background-color: #6aa2b9;
+    transition: 0.15s all ease-in;
+  }
+}
+@media (max-width: 1000px) {
+  html body .pageContainer .col.generalContent .contentContainer {
+    padding: 50px 45px;
+  }
+}
+@media (max-width: 600px) {
+  html body .pageContainer .col.generalContent .contentContainer {
+    padding: 50px 20px;
+  }
+}
+@media (max-width: 1000px) {
+  html body .pageContainer .col.generalContent {
+    position: relative;
+    width: 100vw;
+    left: calc(-50vw + 50%);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+html body .pageContainer .hero {
   background-image: url("./images/auto-accident-background-image.jpg");
   background-size: cover;
   position: relative;
   z-index: 1;
   padding: 50px 0;
 }
-body .pageContainer .hero:before {
+@media (max-width: 1000px) {
+  html body .pageContainer .hero {
+    padding: 50px 0 0;
+  }
+}
+html body .pageContainer .hero:before {
   content: "";
   display: block;
   position: absolute;
@@ -67,83 +223,59 @@ body .pageContainer .hero:before {
   background: rgba(84, 84, 84, 0.7);
   z-index: -1;
 }
-body .pageContainer .hero .heading {
-  color: #ffffff;
-  font-size: 35px;
+html body .pageContainer .hero .heroHeading {
+  text-align: center;
+  margin-bottom: 50px;
 }
-body .pageContainer .hero .subheading {
+@media (max-width: 1000px) {
+  html body .pageContainer .hero .heroHeading {
+    padding: 0 45px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 600px) {
+  html body .pageContainer .hero .heroHeading {
+    padding: 0 20px;
+  }
+}
+html body .pageContainer .hero .heroHeading .heading {
   color: #ffffff;
-  font-size: 28px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  html body .pageContainer .hero .heroHeading .heading {
+    font-size: 25px;
+  }
+}
+html body .pageContainer .hero .heroHeading .subheading {
+  color: #ffffff;
+  font-size: 25px;
   font-weight: normal;
+  font-style: italic;
 }
-body .pageContainer .hero .formContainer {
+@media (max-width: 1000px) {
+  html body .pageContainer .hero .heroHeading .subheading {
+    font-size: 20px;
+  }
+}
+html body .pageContainer .hero .formContainer {
   background-color: #124557;
   border-radius: 5px;
-  border: 1px solid #ffffff;
+  border: 3px solid #ffffff;
   padding: 25px;
 }
-body .pageContainer .hero .formContainer .question {
-  margin: 15px 0;
+html body .pageContainer .hero .formContainer .question {
+  margin: 2.5px 0;
   display: inline-block;
   width: 100%;
 }
-body .pageContainer .hero .formContainer .question:first-child {
+html body .pageContainer .hero .formContainer .question:first-child {
   margin-top: 0;
 }
-body .pageContainer .hero .formContainer .question h6 {
+html body .pageContainer .hero .formContainer .question h5 {
   color: #ffffff;
 }
-body .pageContainer .hero .formContainer .question .answers {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice {
-  text-align: center;
-  width: 48%;
-  height: 40px;
-  position: relative;
-  display: block;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice label, body .pageContainer .hero .formContainer .question .answers .answerChoice input {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice label {
-  padding: 5px;
-  border: 1px solid #CCC;
-  z-index: 90;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 2px;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio] {
-  opacity: 0;
-  z-index: 100;
-  margin: 0;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice input:hover {
-  cursor: pointer;
-}
-body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio]:checked + label {
-  background-color: yellow;
-}
-body .pageContainer .hero .formContainer .contactInfo {
-  margin: 15px 0;
-}
-body .pageContainer .hero .formContainer .contactInfo h6 {
-  color: #ffffff;
-}
-body .pageContainer .hero .formContainer .contactInfo .contactField {
-  margin: 10px 0;
-}
-body .pageContainer .hero .formContainer .contactInfo .contactField label {
+html body .pageContainer .hero .formContainer .question .accidentDateLabel {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -154,9 +286,189 @@ body .pageContainer .hero .formContainer .contactInfo .contactField label {
   white-space: nowrap;
   border: 0;
 }
-body .pageContainer .hero .formContainer .contactInfo .contactField input {
-  width: 100%;
+html body .pageContainer .hero .formContainer .question .accidentDateInput {
+  width: calc(100% - 10px);
   height: 40px;
+  padding-left: 10px;
+  margin: 7.5px 0 2.5px;
+}
+html body .pageContainer .hero .formContainer .question .answers {
+  display: flex;
+  justify-content: space-between;
+  margin: 7.5px 0 2.5px;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice {
+  text-align: center;
+  width: 48%;
+  height: 40px;
+  position: relative;
+  display: block;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice:focus-visible label {
+  border-color: #ee3b3b;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice label, html body .pageContainer .hero .formContainer .question .answers .answerChoice input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice label {
+  padding: 5px;
+  border: 2px solid #ffffff;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #124557;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: 0.2s all ease-in;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice label:hover {
+  border-color: #ee3b3b;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio] {
+  opacity: 0;
+  z-index: 1;
+  margin: 0;
+  transition: 0.2s all ease-in;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice input:hover {
+  cursor: pointer;
+}
+html body .pageContainer .hero .formContainer .question .answers .answerChoice input[type=radio]:checked + label {
+  background-color: #ee3b3b;
+  border-color: #ffffff;
+  transition: 0.2s all ease-in;
+  color: #ffffff;
+}
+html body .pageContainer .hero .formContainer .contactInfo {
+  margin: 2.5px 0;
+}
+html body .pageContainer .hero .formContainer .contactInfo .contactField {
+  margin: 10px 0;
+}
+html body .pageContainer .hero .formContainer .contactInfo .contactField label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+html body .pageContainer .hero .formContainer .contactInfo .contactField input {
+  width: calc(100% - 10px);
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  margin-bottom: 5px;
+}
+html body .pageContainer .hero .formContainer .reqText {
+  opacity: 0;
+  color: #ee3b3b;
+  transition: 0.15s all ease-in;
+  font-size: 10px;
+  font-weight: bold;
+}
+html body .pageContainer .hero .formContainer .reqText.active {
+  opacity: 1;
+  transition: 0.15s all ease-in;
+}
+html body .pageContainer .hero .formContainer .submit {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  border: 2px solid #ffffff;
+  background-color: #ee3b3b;
+  border-radius: 2px;
+  color: #ffffff;
+  transition: 0.2s all ease-in;
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  html body .pageContainer .hero .formContainer .submit {
+    font-size: 16px;
+  }
+}
+html body .pageContainer .hero .formContainer .submit:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  border-color: #ee3b3b;
+  transition: 0.2s all ease-in;
+}
+html body .pageContainer .hero .formContainer .submit:hover span {
+  color: #ee3b3b;
+  transition: 0.2s all ease-in;
+}
+html body .pageContainer .hero .formContainer .submit.loading {
+  background-color: #ffffff;
+  border-color: #ee3b3b;
+}
+html body .pageContainer .hero .formContainer .submit.loading:hover {
+  cursor: unset;
+}
+html body .pageContainer .hero .formContainer .submit.loading .submitText {
+  visibility: hidden;
+  opacity: 0;
+}
+html body .pageContainer .hero .formContainer .submit.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ee3b3b;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+html body .pageContainer .hero .formContainer .submit.success {
+  background-color: #ffffff;
+  border-color: #ee3b3b;
+  color: #ee3b3b;
+}
+html body .pageContainer .hero .formContainer .submit.success .submitText {
+  visibility: visible;
+  opacity: 1;
+}
+html body .pageContainer .hero .formContainer .submit.success:hover {
+  cursor: unset;
+}
+html body .pageContainer .hero .formContainer .submit.failed {
+  background-color: #ffffff;
+  border-color: #ee3b3b;
+  color: #ee3b3b;
+}
+html body .pageContainer .hero .formContainer .submit.failed .submitText {
+  visibility: visible;
+  opacity: 1;
+}
+html body .pageContainer .hero .formContainer .submit.failed:hover {
+  cursor: unset;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
